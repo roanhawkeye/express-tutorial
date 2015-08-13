@@ -14,6 +14,9 @@ fs.readFile('users.json', {encoding: 'utf8'}, function(err, data){
 	})
 })
 
+app.set('views', './views')
+app.set('view engine', 'jade')
+
 app.get('/', function (req, res) {
 	var buffer = '';
 
