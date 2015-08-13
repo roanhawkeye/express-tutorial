@@ -27,19 +27,9 @@ app.get('/', function (req, res) {
 	res.render('index', { users : users })	
 });
 
-app.get(/big.*/, function (req, res, next) {
-  console.log('BIG USER ACCESS')
-  next()
-})
-
-app.get(/.*dog.*/, function (req, res, next) {
-  console.log('DOGS GO WOOF')
-  next()
-})
-
 app.get('/:username', function (req, res) {
   var username = req.params.username
-  res.send(username)
+  res.render('user', { username : username })
 })
 
 var server = app.listen(3000, function(){
